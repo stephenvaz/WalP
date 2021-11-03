@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:walp/main.dart';
+import 'package:walp/firestore_test.dart';
 import 'package:walp/model/user_model.dart';
 
 class SignUp extends StatefulWidget {
@@ -237,7 +237,7 @@ class _SignUpState extends State<SignUp> {
 
     Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => const Initial()),
+        MaterialPageRoute(builder: (context) => const Profile()),
         (route) => false);
   }
 }

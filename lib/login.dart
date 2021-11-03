@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:walp/main.dart';
+import 'package:walp/firestore_test.dart';
 import 'reg.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -161,7 +161,7 @@ class _SignInUpState extends State<SignInUp> {
           .then((uid) => {
                 Fluttertoast.showToast(msg: 'Login Successful'),
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => const Initial()))
+                    MaterialPageRoute(builder: (context) => const Profile()))
               })
           .catchError((e) => {
                 Fluttertoast.showToast(msg: e!.message),
