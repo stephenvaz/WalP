@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "240517772190",
-    "project_id": "walp-3d2f7",
-    "storage_bucket": "walp-3d2f7.appspot.com"
+    "project_number": "1037201398402",
+    "project_id": "walp-a7011",
+    "storage_bucket": "walp-a7011.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:240517772190:android:da1a0c9698acfcb6341c8f",
+        "mobilesdk_app_id": "1:1037201398402:android:ed466eec14e8e286f6b29b",
         "android_client_info": {
           "package_name": "com.example.walp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "240517772190-i969m3q6e4813bs5oqg7pbj2ha33lm9l.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.walp",
-            "certificate_hash": "484aa40e97bb94cd3c12f2ff8525e135eeaa8a95"
-          }
-        },
-        {
-          "client_id": "240517772190-s1skdlaia9cuomc841q6ebql0bh110k5.apps.googleusercontent.com",
+          "client_id": "1037201398402-u02979ljuobsooge108b93ok2p7c0t8q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC1jLd3Fc2dI5iv7oQQHnKqH4GI1aF0nsE"
+          "current_key": "AIzaSyDunsfVwxlXfND4VUd-OQ82d-L_gyhSkzU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "240517772190-s1skdlaia9cuomc841q6ebql0bh110k5.apps.googleusercontent.com",
+              "client_id": "1037201398402-u02979ljuobsooge108b93ok2p7c0t8q.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
