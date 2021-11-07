@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:walp/firestore_test.dart';
 import 'login.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -27,6 +28,17 @@ class _InitialState extends State<Initial> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
+                  TextButton(
+                    child: const Text('Profile Page'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Profile()),
+                      );
+                    },
+                  ),
+                  const Padding(padding: EdgeInsets.all(12)),
                   TextButton(
                     child: const Text('Login Page'),
                     onPressed: () {

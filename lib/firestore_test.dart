@@ -31,22 +31,28 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        
         body: Container(
           constraints: const BoxConstraints.expand(),
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage("https://i.gifer.com/9Z0P.gif"),
-                    fit: BoxFit.fill)),
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage("https://i.gifer.com/EPts.gif"),
+                  fit: BoxFit.fill)),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(5, 30, 5, 0),
+            padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(
-                  Icons.account_circle,
-                  size: 80,
+                IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.arrow_back)),
+                const Center(
+                  child: Icon(
+                    Icons.account_circle,
+                    size: 80,
+                  ),
                 ),
                 const Padding(padding: EdgeInsets.all(8)),
                 Row(
@@ -70,6 +76,16 @@ class _ProfileState extends State<Profile> {
                             style: const TextStyle(fontSize: 20)))
                   ],
                 ),
+                const Padding(padding: EdgeInsets.all(8)),
+                Expanded(
+                    child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.4),
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30)),
+                  ),
+                )),
               ],
             ),
           ),

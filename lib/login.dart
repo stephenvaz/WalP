@@ -24,7 +24,7 @@ class _SignInUpState extends State<SignInUp> {
   Widget build(BuildContext context) {
     final email = TextFormField(
         style: const TextStyle(color: Colors.white),
-        autofocus: false,
+        autofocus: true,
         controller: _emailC,
         keyboardType: TextInputType.emailAddress,
         onSaved: (value) => _emailC.text = value!,
@@ -54,7 +54,7 @@ class _SignInUpState extends State<SignInUp> {
 
     final pass = TextFormField(
       style: const TextStyle(color: Colors.white),
-      autofocus: true,
+      autofocus: false,
       controller: _passC,
       obscureText: true,
       keyboardType: TextInputType.visiblePassword,
