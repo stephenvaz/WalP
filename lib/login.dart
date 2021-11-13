@@ -117,41 +117,35 @@ class _SignInUpState extends State<SignInUp> {
         }
       },
       child: Scaffold(
-        backgroundColor: Colors.black,
+        resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.transparent,
         body: Center(
-          child: Container(
-            constraints: const BoxConstraints.expand(),
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/gif/login.gif'),
-                    fit: BoxFit.fill)),
-            child: Form(
-              key: formKey,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: email,
-                      ),
-                      const Padding(padding: EdgeInsets.all(8.0)),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: pass,
-                      ),
-                      const Padding(padding: EdgeInsets.all(16.0)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          loginButton,
-                          const Padding(padding: EdgeInsets.all(8.0)),
-                          signUpButton,
-                        ],
-                      ),
-                    ]),
-              ),
+          child: Form(
+            key: formKey,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: email,
+                    ),
+                    const Padding(padding: EdgeInsets.all(8.0)),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: pass,
+                    ),
+                    const Padding(padding: EdgeInsets.all(16.0)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        loginButton,
+                        const Padding(padding: EdgeInsets.all(8.0)),
+                        signUpButton,
+                      ],
+                    ),
+                  ]),
             ),
           ),
         ),
@@ -167,7 +161,7 @@ class _SignInUpState extends State<SignInUp> {
           .then((uid) => {
                 Fluttertoast.showToast(msg: 'Login Successful'),
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) =>  const Profile()))
+                    MaterialPageRoute(builder: (context) => const Profile()))
               })
           .catchError((e) => {
                 Fluttertoast.showToast(msg: e!.message),

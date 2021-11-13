@@ -164,43 +164,37 @@ class _SignUpState extends State<SignUp> {
         }
       },
       child: Scaffold(
-        backgroundColor: Colors.black,
+        resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.transparent,
         body: Center(
-          child: Container(
-            constraints: const BoxConstraints.expand(),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/gif/login.gif'), fit: BoxFit.fill),
-            ),
-            child: Form(
-              key: formKey,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: name,
-                      ),
-                      const Padding(padding: EdgeInsets.all(8.0)),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: email,
-                      ),
-                      const Padding(padding: EdgeInsets.all(8.0)),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: pass,
-                      ),
-                      const Padding(padding: EdgeInsets.all(8.0)),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: pass2,
-                      ),
-                      signUpButton,
-                    ]),
-              ),
+          child: Form(
+            key: formKey,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: name,
+                    ),
+                    const Padding(padding: EdgeInsets.all(8.0)),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: email,
+                    ),
+                    const Padding(padding: EdgeInsets.all(8.0)),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: pass,
+                    ),
+                    const Padding(padding: EdgeInsets.all(8.0)),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: pass2,
+                    ),
+                    signUpButton,
+                  ]),
             ),
           ),
         ),

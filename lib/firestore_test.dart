@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:walp/login.dart';
 import 'package:walp/model/user_model.dart';
 
 class Profile extends StatefulWidget {
@@ -19,7 +20,7 @@ class _ProfileState extends State<Profile> {
     super.initState();
     FirebaseFirestore.instance
         .collection('users')
-        .doc(user!.uid)
+        .doc(user?.uid)
         .get()
         .then((value) {
       loggedInUser = UserModel.fromMap(value.data());
@@ -29,14 +30,49 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+    return FutureBuilder<User>(
+        builder: (BuildContext context, AsyncSnapshot<User> snapshot) {
+      if (user != null) {
+        // this is your user instance
+        /// is because there is user already logged
+        return const Pf2();
+      }
+
+      /// other way there is no user logged.
+      return const SignInUp();
+    });
+  }
+}
+class Pf2 extends StatefulWidget {
+  const Pf2({ Key? key }) : super(key: key);
+
+  @override
+  _Pf2State createState() => _Pf2State();
+}
+
+class _Pf2State extends State<Pf2> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(user?.uid)
+        .get()
+        .then((value) {
+      loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.transparent,
         body: Container(
           constraints: const BoxConstraints.expand(),
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/gif/profile.gif'),
-                  fit: BoxFit.fill)),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
             child: Column(
@@ -96,7 +132,7 @@ class _ProfileState extends State<Profile> {
                 Expanded(
                     child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.4),
+                    color: Colors.white.withOpacity(0.2),
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(30),
                         topRight: Radius.circular(30)),
@@ -110,3 +146,4 @@ class _ProfileState extends State<Profile> {
     );
   }
 }
+
