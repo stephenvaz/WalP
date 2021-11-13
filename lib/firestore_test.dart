@@ -35,7 +35,7 @@ class _ProfileState extends State<Profile> {
           constraints: const BoxConstraints.expand(),
           decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage("https://i.gifer.com/EPts.gif"),
+                  image: AssetImage('assets/gif/profile.gif'),
                   fit: BoxFit.fill)),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
@@ -47,33 +47,49 @@ class _ProfileState extends State<Profile> {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: const Icon(Icons.arrow_back)),
-                const Center(
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    )),
+                Center(
                   child: Icon(
                     Icons.account_circle,
                     size: 80,
+                    color: Colors.white.withOpacity(0.6),
                   ),
                 ),
                 const Padding(padding: EdgeInsets.all(8)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.badge),
+                    Icon(
+                      Icons.badge,
+                      color: Colors.white.withOpacity(0.7),
+                    ),
                     const Padding(padding: EdgeInsets.all(4)),
                     Center(
                         child: Text('${loggedInUser.name}',
-                            style: const TextStyle(fontSize: 20)))
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white.withOpacity(0.7),
+                            )))
                   ],
                 ),
                 const Padding(padding: EdgeInsets.all(8)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.email),
+                    Icon(
+                      Icons.email,
+                      color: Colors.white.withOpacity(0.7),
+                    ),
                     const Padding(padding: EdgeInsets.all(4)),
                     Center(
                         child: Text('${loggedInUser.email}',
-                            style: const TextStyle(fontSize: 20)))
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white.withOpacity(0.7),
+                            )))
                   ],
                 ),
                 const Padding(padding: EdgeInsets.all(8)),

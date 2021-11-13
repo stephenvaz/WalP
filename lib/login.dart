@@ -24,7 +24,7 @@ class _SignInUpState extends State<SignInUp> {
   Widget build(BuildContext context) {
     final email = TextFormField(
         style: const TextStyle(color: Colors.white),
-        autofocus: true,
+        autofocus: false,
         controller: _emailC,
         keyboardType: TextInputType.emailAddress,
         onSaved: (value) => _emailC.text = value!,
@@ -88,7 +88,10 @@ class _SignInUpState extends State<SignInUp> {
       },
       child: const Text('Login'),
       style: ElevatedButton.styleFrom(
-        primary: Colors.white.withOpacity(0.05),
+        primary: Colors.white.withOpacity(0.25),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32),
+        ),
       ),
     );
     final signUpButton = ElevatedButton(
@@ -98,7 +101,10 @@ class _SignInUpState extends State<SignInUp> {
       },
       child: const Text('Sign Up'),
       style: ElevatedButton.styleFrom(
-        primary: Colors.white.withOpacity(0.05),
+        primary: Colors.white.withOpacity(0.25),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32),
+        ),
       ),
     );
 
@@ -117,7 +123,7 @@ class _SignInUpState extends State<SignInUp> {
             constraints: const BoxConstraints.expand(),
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage("https://i.gifer.com/7Ik1.gif"),
+                    image: AssetImage('assets/gif/login.gif'),
                     fit: BoxFit.fill)),
             child: Form(
               key: formKey,
@@ -161,7 +167,7 @@ class _SignInUpState extends State<SignInUp> {
           .then((uid) => {
                 Fluttertoast.showToast(msg: 'Login Successful'),
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => const Profile()))
+                    MaterialPageRoute(builder: (context) =>  const Profile()))
               })
           .catchError((e) => {
                 Fluttertoast.showToast(msg: e!.message),

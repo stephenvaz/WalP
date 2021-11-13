@@ -148,7 +148,10 @@ class _SignUpState extends State<SignUp> {
       },
       child: const Text('Sign Up'),
       style: ElevatedButton.styleFrom(
-        primary: Colors.white.withOpacity(0.05),
+        primary: Colors.white.withOpacity(0.25),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32),
+        ),
       ),
     );
 
@@ -167,8 +170,7 @@ class _SignUpState extends State<SignUp> {
             constraints: const BoxConstraints.expand(),
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage("https://i.gifer.com/7Ik1.gif"),
-                  fit: BoxFit.fill),
+                  image: AssetImage('assets/gif/login.gif'), fit: BoxFit.fill),
             ),
             child: Form(
               key: formKey,
@@ -216,6 +218,7 @@ class _SignUpState extends State<SignUp> {
       });
     }
   }
+
 //post detail fun yet to check if it works, everything else seems to work
   postDetailstoFirestore() async {
     //call firestore
@@ -234,7 +237,6 @@ class _SignUpState extends State<SignUp> {
         .doc(user.uid)
         .set(userModel.toMap());
     Fluttertoast.showToast(msg: 'Account Created Successfully');
-
     Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (context) => const Profile()),
