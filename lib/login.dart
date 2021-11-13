@@ -96,8 +96,8 @@ class _SignInUpState extends State<SignInUp> {
     );
     final signUpButton = ElevatedButton(
       onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const SignUp()));
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const SignUp()));
       },
       child: const Text('Sign Up'),
       style: ElevatedButton.styleFrom(
